@@ -42,7 +42,8 @@ class Post extends Eloquent {
 		
 		return parent::save();
 	}
-}```
+}
+```
 
 Then I had a use case for logging in, didn't want to validate input before sending to authentication on a model so can do this instead...
 ```php
@@ -69,4 +70,31 @@ class LoginController extends Controller {
 		
 		// run authentication
 	}
-}```
+}
+```
+
+In the controller example you can also skip the defineInput method and do this instead...
+```php
+class LoginController extends Controller {
+
+	use Validatable;
+	
+	...
+	
+	
+	public function postIndex()
+	{
+		$validate = $this->validate(function($add)
+		{
+			$add->input('email')->required()->email();
+			$add->input('password')->required();
+		});
+	
+		if ( ! $validate)
+		{
+			return Redirect::back()->withErrors($this->getErrors());
+		}
+		
+		// authenticate
+	}
+}
