@@ -45,6 +45,24 @@ class Post extends Eloquent {
 }
 ```
 
+So the above in a controller would be...
+```php
+class PostController extends Controller {
+
+	...
+	
+	public function postIndex()
+	{
+		$post = new Post(Input::all());
+		if ( ! $post->save())
+		{
+			return Redirect::back()->withErrors($post->getErrors(), $post->getInput());
+		}
+		
+		return Redirect::to('success/page');
+	}
+}```
+
 Then I had a use case for logging in, didn't want to validate input before sending to authentication on a model so can do this instead...
 ```php
 class LoginController extends Controller {
@@ -98,3 +116,4 @@ class LoginController extends Controller {
 		// authenticate
 	}
 }
+```
