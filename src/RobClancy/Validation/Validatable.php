@@ -35,10 +35,9 @@ trait Validatable {
 		{
 			$onlyRules = is_null($defineInput) ? false : (array) $defineInput;
 			
-			$me = $this;
-			$defineInput = function($me)
+			$defineInput = function()
 			{
-				$me->defineInput();
+				$this->defineInput();
 			};
 		}
 		
