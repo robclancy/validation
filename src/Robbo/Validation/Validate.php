@@ -42,11 +42,13 @@ trait Validate {
 		
 		$this->inputRules = [];
 		$defineInput($this);
-		
+
 		if ($onlyRules)
 		{
 			$this->inputRules = array_intersect_key($this->inputRules, array_flip($onlyRules));
 		}
+
+		$input = array_intersect_key($input, $this->inputRules);
 		
 		return $this->checkValidates($input, $this->inputRules);
 	}
