@@ -2,7 +2,7 @@
 
 interface ValidatorInterface {
 	
-	public function check($input, $rules);
+	public function check(array $input, array $rules);
 	
 	public function getErrors();
 }
