@@ -20,7 +20,7 @@ trait Validate {
 	
 	public function input($key)
 	{
-		return $this->input[$key] = $this->inputFactory->make($key);
+		return $this->inputRules[$key] = $this->inputFactory->make($key);
 	}
 	
 	protected function setupValidation(){}
