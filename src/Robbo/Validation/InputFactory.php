@@ -2,7 +2,7 @@
 
 use RobClancy\ValidationRules\Buildable;
 
-class Factory {
+class InputFactory {
 	
 	protected $builder;
 	
