@@ -24,7 +24,7 @@ class Illuminate implements ValidatorInterface {
 		$validator = $this->factory->make($input, $rules, $messages);
 		if ($validator->fails())
 		{
-			$this->errors = $validator->getErrors();
+			$this->errors = $validator->errors();
 			return false;
 		}
 		
