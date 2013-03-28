@@ -7,7 +7,7 @@ class Eloquent extends Model {
 	
 	use Validate;
 	
-	public function save()
+	public function save(array $options = [])
 	{
 		if ( ! $this->validate($this->attributes))
 		{
