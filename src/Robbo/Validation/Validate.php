@@ -1,5 +1,7 @@
 <?php namespace Robbo\Validation;
 
+use Robbo\Validation\Validator\ValidatorInterface;
+
 trait Validate {
 	
 	protected $inputFactory;
@@ -84,7 +86,7 @@ trait Validate {
 		$this->inputFactory = $factory;
 	}
 	
-	public function setValidator(Validator $validator)
+	public function setValidator(ValidatorInterface $validator)
 	{
 		$this->validator = $validator;
 	}
