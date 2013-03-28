@@ -1,12 +1,12 @@
 <?php namespace Robbo\Validation;
 
-use Robbo\ValidationRules\Buildable;
+use Robbo\ValidationRules\Builder\BuilderInterface;
 
 class InputFactory {
 	
 	protected $builder;
 	
-	public function __construct(Buildable $builder)
+	public function __construct(BuilderInterface $builder)
 	{
 		$this->builder = $builder;
 	}
