@@ -1,4 +1,4 @@
-<?php namespace RobClancy\Validation\Validator;
+<?php namespace Robbo\Validation\Validator;
 
 use Illuminate\Validation\Factory;
 
