@@ -1,6 +1,6 @@
-<?php namespace RobClancy\Validation;
+<?php namespace Robbo\Validation;
 
-use RobClancy\ValidationRules\Buildable;
+use Robbo\ValidationRules\Buildable;
 
 class InputFactory {
 	
