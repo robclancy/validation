@@ -5,7 +5,7 @@ use Robbo\ValidationRules\Builder\Illuminate as Builder;
 
 trait Illuminate {
 	
-	use Validatable;
+	use Validate;
 	
 	protected function setupValidation()
 	{
