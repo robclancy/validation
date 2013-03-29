@@ -13,6 +13,8 @@ trait Validate {
 	protected $validationErrors = [];
 	
 	protected $validatedInput;
+
+	protected $hasErrors = false;
 	
 	protected function defineInput()
 	{
@@ -60,10 +62,13 @@ trait Validate {
 		
 		if ($this->validator->check($input, $rules))
 		{
+			$this->hasErrors = false;
 			$this->validatedInput = $input;
 			return true;
 		}
 		
+		$this->hasErrors = true;
+		$this->validatedInput = $input;
 		$this->validationErrors = $this->validator->getErrors();
 		return false;
 	}
