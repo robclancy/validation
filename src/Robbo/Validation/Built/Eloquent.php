@@ -14,8 +14,11 @@ class Eloquent extends Model {
 			return false;
 		}
 		
+		$key = $this->getKey();
+
 		$this->attributes = $this->getValidatedInput();
-		
-		return parent::save();
+		$this->attributes[$this->getkeyName()] = $key;
+
+		return parent::save($options);
 	}
 }
